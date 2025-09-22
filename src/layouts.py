@@ -4,7 +4,9 @@ def get_layout(data):
 	return html.Div(
 		children=[
 			html.H1(
-                children="Avocado Analytics"),
+                children="Avocado Analytics",
+                className="header-title"
+                ),
 			html.P(
 				children=(
 					"Analyze the behavior of avocado prices and numbers"
