@@ -23,7 +23,7 @@ app.title = "Avocado Analytics: Understand Your Avocados!"
 
 
 
-app.layout = get_layout(data)
+app.layout = get_layout(data, regions, avocado_types)
 
 if __name__ == "__main__":
     app.run(debug=True)
