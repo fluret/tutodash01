@@ -1,5 +1,6 @@
 import pandas as pd
-from dash import Dash, dcc, html
+from dash import Dash
+from src.layouts import get_layout
 
 data = (
 pd.read_csv("avocado.csv")
@@ -11,41 +12,8 @@ pd.read_csv("avocado.csv")
 app = Dash(__name__)
 
 
-app.layout = html.Div(
-    children=[
-        html.H1(children="Avocado Analytics"),
-        html.P(
-            children=(
-                "Analyze the behavior of avocado prices and the number"
-                " of avocados sold in the US between 2015 and 2018"
-            ),
-        ),
-        dcc.Graph(
-            figure={
-                "data": [
-                    {
-                        "x": data["Date"],
-                        "y": data["AveragePrice"],
-                        "type": "lines",
-                    },
-                ],
-                "layout": {"title": "Average Price of Avocados"},
-            },
-        ),
-        dcc.Graph(
-            figure={
-                "data": [
-                    {
-                        "x": data["Date"],
-                        "y": data["Total Volume"],
-                        "type": "lines",
-                    },
-                ],
-                "layout": {"title": "Avocados Sold"},
-            },
-        ),
-    ]
-)
+
+app.layout = get_layout(data)
 
 if __name__ == "__main__":
     app.run(debug=True)
