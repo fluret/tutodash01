@@ -52,18 +52,32 @@ def get_layout(data):
                     ),
                     className="card",
                 ),
-				dcc.Graph(
-				figure={
-					"data": [
-						{
-							"x": data["Date"],
-							"y": data["Total Volume"],
-							"type": "lines",
-						},
-					],
-					"layout": {"title": "Total Volume of Avocados Sold in Albany"},
-				},
-			    ),
+				html.Div(
+                    children=dcc.Graph(
+                        id="volume-chart",
+                        config={"displayModeBar": False},
+                        figure={
+                            "data": [
+                                {
+                                    "x": data["Date"],
+                                    "y": data["Total Volume"],
+                                    "type": "lines",
+                                },
+                            ],
+                            "layout": {
+                                "title": {
+                                    "text": "Avocados Sold",
+                                    "x": 0.05,
+                                    "xanchor": "left",
+                                },
+                                "xaxis": {"fixedrange": True},
+                                "yaxis": {"fixedrange": True},
+                                "colorway": ["#E12D39"],
+                            },
+                        },
+                    ),
+                    className="card",
+                ),
 			],
 			className="wrapper",
 			),
