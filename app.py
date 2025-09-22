@@ -3,17 +3,17 @@ from dash import Dash
 from src.layouts import get_layout
 
 data = (
-pd.read_csv("avocado.csv")
-.query("type == 'conventional' and region == 'Albany'")
-.assign(Date=lambda data: pd.to_datetime(data["Date"], format="%Y-%m-%d"))
-.sort_values(by="Date")
+    pd.read_csv("avocado.csv", parse_dates=["Date"])
+    .sort_values(by="Date")
 )
+
+regions = data["region"].drop_duplicates().sort_values().tolist()
+avocado_types = data["type"].drop_duplicates().sort_values().tolist()
 
 external_stylesheets = [
     {
         "href": (
-            "https://fonts.googleapis.com/css2?"
-            "family=Lato:wght@400;700&display=swap"
+            "https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
         ),
         "rel": "stylesheet",
     },
