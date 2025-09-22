@@ -1,0 +1,10 @@
+[project]
+name = "tutodash01"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "dash>=3.2.0",
+    "pandas>=2.3.2",
+]
