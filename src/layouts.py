@@ -19,7 +19,7 @@ def get_layout(data, regions, avocado_types):
 				],
 				className="header",
 			),
-                        html.Div(
+            html.Div(
             children=[
                 html.Div(
                     children=[
