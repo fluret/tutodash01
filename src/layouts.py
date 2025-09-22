@@ -3,7 +3,10 @@ from dash import dcc, html
 def get_layout(data):
 	return html.Div(
 		children=[
-			html.H1(children="Avocado Analytics"),
+			html.H1(
+                children="Avocado Analytics",
+                style={"fontSize": "48px", "color": "red"},
+            ),
 			html.P(
 				children=(
 					"Analyze the behavior of avocado prices and numbers"
