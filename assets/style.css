@@ -73,3 +73,26 @@ body {
 .Select-placeholder {
     line-height: 48px;
 }
+
+#type-filter .Select-control,
+#region-filter .Select-control {
+    border-radius: 16px;
+    border: 2px solid black;
+    font-weight: bold;
+    background-color: #079A82 !important;
+}
+
+#type-filter .Select-menu-outer,
+#region-filter .Select-menu-outer {
+    border-radius: 16px;
+    border: 2px solid black;
+    background-color: rgb(25, 25, 25);
+    color: white;
+    margin-top: 5px;
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.5);
+}
+
+#type-filter .Select-value-label:hover,
+#region-filter .Select-value-label:hover {
+    color: rgb(37, 224, 37) !important;
+}
