@@ -1,6 +1,7 @@
 import pandas as pd
 from dash import Dash
 from src.layouts import get_layout
+from src.callbacks1 import register_callbacks
 
 data = (
     pd.read_csv("avocado.csv", parse_dates=["Date"])
@@ -24,6 +25,8 @@ app.title = "Avocado Analytics: Understand Your Avocados!"
 
 
 app.layout = get_layout(data, regions, avocado_types)
+
+register_callbacks(app, data)
 
 if __name__ == "__main__":
     app.run(debug=True)
