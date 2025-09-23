@@ -10,4 +10,7 @@ def register_callbacks(app, data):
         Input("date-range", "end_date"),
     )
     def update_charts(region, avocado_type, start_date, end_date):
-        # ...
+        filtered_data = data.query(
+            "region == @region and type == @avocado_type"
+            " and Date >= @start_date and Date <= @end_date"
+        )
