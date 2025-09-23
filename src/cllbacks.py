@@ -51,3 +51,5 @@ def register_callbacks(app, data):
                 "colorway": ["#E12D39"],
             },
         }
+        
+        return price_chart_figure, volume_chart_figure
