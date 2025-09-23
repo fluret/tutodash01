@@ -35,3 +35,19 @@ def register_callbacks(app, data):
                 "colorway": ["#17B897"],
             },
         }
+        
+        volume_chart_figure = {
+            "data": [
+                {
+                    "x": filtered_data["Date"],
+                    "y": filtered_data["Total Volume"],
+                    "type": "lines",
+                },
+            ],
+            "layout": {
+                "title": {"text": "Avocados Sold", "x": 0.05, "xanchor": "left"},
+                "xaxis": {"fixedrange": True},
+                "yaxis": {"fixedrange": True},
+                "colorway": ["#E12D39"],
+            },
+        }
