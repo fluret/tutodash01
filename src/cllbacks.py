@@ -14,3 +14,24 @@ def register_callbacks(app, data):
             "region == @region and type == @avocado_type"
             " and Date >= @start_date and Date <= @end_date"
         )
+        
+        price_chart_figure = {
+            "data": [
+                {
+                    "x": filtered_data["Date"],
+                    "y": filtered_data["AveragePrice"],
+                    "type": "lines",
+                    "hovertemplate": "$%{y:.2f}<extra></extra>",
+                },
+            ],
+            "layout": {
+                "title": {
+                    "text": "Average Price of Avocados",
+                    "x": 0.05,
+                    "xanchor": "left",
+                },
+                "xaxis": {"fixedrange": True},
+                "yaxis": {"tickprefix": "$", "fixedrange": True},
+                "colorway": ["#17B897"],
+            },
+        }
