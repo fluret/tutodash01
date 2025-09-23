@@ -1,7 +1,7 @@
 import pandas as pd
 from dash import Dash
 from src.layouts import get_layout
-from src.callbacks1 import register_callbacks
+from src.callbacks import register_callbacks
 
 data = (
     pd.read_csv("avocado.csv", parse_dates=["Date"])
